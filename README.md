@@ -2,6 +2,10 @@
 
 🚀 让 Clash 的 Mixin 同时对多个飞机场适配
 
+## 用法
+
+根据下面一节的解释适当修改 `mixin.js`，然后将内容复制到 `CFW` 的 `Profile Mixin` 部分，`Type` 选择 `JavaScript`
+
 ## 各段内容的解释
 
 * 通用设置，适配 TUN。如果无需 TUN 虚拟网卡，可将本段删除
