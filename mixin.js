@@ -71,7 +71,7 @@ module.exports.parse = ({ content, name, url }, { yaml, axios, notify }) => {
   // 还可以继续添加
 
   customProxy.forEach(rule => {
-	  content.rules.unshift(rule + proxyGroupName);
+    content.rules.unshift(rule + proxyGroupName);
   })
   
   // Debug
