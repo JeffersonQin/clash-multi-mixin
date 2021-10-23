@@ -86,6 +86,12 @@
   // 还可以继续添加
   ```
 
+## 关于机场名和组名
+
+![](https://cdn.jsdelivr.net/gh/JeffersonQin/blog-asset@latest/usr/picgo/20211023105335.png)
+
+![](https://cdn.jsdelivr.net/gh/JeffersonQin/blog-asset@latest/usr/picgo/20211023105535.png)
+
 ## 链接
 
 详细配置方法，可以访问我的[博客](https://gyrojeff.top/index.php/archives/Clash-入土为安/)
