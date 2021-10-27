@@ -2,6 +2,8 @@
 
 🚀 让 Clash 的 Mixin 同时对多个飞机场适配
 
+* 2021/10/27 Update: 增加了 bilibili 规则切换的规则组（方便浏览港澳台内容）
+
 ## 用法
 
 根据下面一节的解释适当修改 `mixin.js`，然后将内容复制到 `CFW` 的 `Profile Mixin` 部分，`Type` 选择 `JavaScript`
@@ -84,6 +86,19 @@
     proxyGroupName = '组3';
   }
   // 还可以继续添加
+  ```
+* 下面的内容增加了 bilibili 规则组
+  ```javascript
+  // bilibili 港澳台 proxy-group
+  content['proxy-groups'].push({
+    name: '📺 Bilibili',
+    type: 'select',
+    proxies: [
+      'DIRECT', proxyGroupName
+    ]
+  });
+
+  content.rules.unshift('DOMAIN-SUFFIX,bilibili.com,📺 Bilibili')
   ```
 
 ## 关于机场名和组名
