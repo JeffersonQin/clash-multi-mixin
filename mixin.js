@@ -72,7 +72,18 @@ module.exports.parse = ({ content, name, url }, { yaml, axios, notify }) => {
 
   customProxy.forEach(rule => {
     content.rules.unshift(rule + proxyGroupName);
-  })
+  });
+
+  // bilibili 港澳台 proxy-group
+  content['proxy-groups'].push({
+    name: '📺 Bilibili',
+    type: 'select',
+    proxies: [
+      'DIRECT', proxyGroupName
+    ]
+  });
+
+  content.rules.unshift('DOMAIN-SUFFIX,bilibili.com,📺 Bilibili')
   
   // Debug
   // axios.get('http://localhost:4016/openFile?path=' + yaml.stringify(content));
