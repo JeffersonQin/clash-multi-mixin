@@ -10,31 +10,59 @@
 
 ## 各段内容的解释
 
-* 通用设置，适配 TUN。如果无需 TUN 虚拟网卡，可将本段删除
-  ```javascript
-  // 通用设置，适配 TUN
-  content['port'] = 7890;
-  content['socks-port'] = 7891;
-  content['allow-lan'] = true;
-  content.dns = {
-    enable: true,
-    nameserver: [
-    '223.5.5.5',
-    '223.6.6.6'
-    ],
-    'enhanced-mode': 'redir-host'
-  };
-  content.tun = {
-    enable: true,
-    // 使用 system 需要 Clash Premium 2021.05.08 及更高版本
-    stack: 'gvisor', 
-    // 请勿更改
-    'dns-hijack': ['198.18.0.2:53'], 
-    'auto-route': true,
-    // 自动检测出口网卡
-    'auto-detect-interface': true
-  };
-  ```
+* 通用设置，适配 TUN。如果无需 TUN 虚拟网卡，可将本段删除。注意：不同的 clash 版本有两种配置的版本。分别为 `mixin-old.js` 和 `mixin-new.js`。
+  * Old
+    ```javascript
+    // 通用设置，适配 TUN
+    content['port'] = 7890;
+    content['socks-port'] = 7891;
+    content['allow-lan'] = true;
+    content.dns = {
+      enable: true,
+      nameserver: [
+      '223.5.5.5',
+      '223.6.6.6'
+      ],
+      'enhanced-mode': 'redir-host'
+    };
+    content.tun = {
+      enable: true,
+      // 使用 system 需要 Clash Premium 2021.05.08 及更高版本
+      stack: 'gvisor', 
+      // 请勿更改
+      'dns-hijack': ['198.18.0.2:53'], 
+      'auto-route': true,
+      // 自动检测出口网卡
+      'auto-detect-interface': true
+    };
+    ```
+  * New:
+    ```javascript
+    content.dns = {
+      enable: true,
+      nameserver: [
+      '223.5.5.5',
+      '223.6.6.6'
+      ],
+      'enhanced-mode': 'fake-ip',
+      fallback: [],
+      'fake-ip-filter': [
+          'dns.msftncsi.com',
+          'www.msftncsi.com',
+          'www.msftconnecttest.com',
+      ]
+    };
+    content.tun = {
+      enable: true,
+      // 使用 system 需要 Clash Premium 2021.05.08 及更高版本
+      stack: 'gvisor', 
+      // 请勿更改
+      'dns-hijack': ['198.18.0.2:53'], 
+      'auto-route': true,
+      // 自动检测出口网卡
+      'auto-detect-interface': true
+    };
+    ```
 * 自定义 DIRECT (直连) 、REJECT (拒绝访问) 的规则
   ```javascript
   [
