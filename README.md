@@ -44,7 +44,7 @@
     'DOMAIN,clash.razord.top,DIRECT',
     'DOMAIN,yacd.haishan.me,DIRECT',
     'DOMAIN-SUFFIX,msftncsi.com,DIRECT',
-    'DOMAIN-SUFFIX,cdn.jsdelivr.net,DIRECT',
+    // 'DOMAIN-SUFFIX,cdn.jsdelivr.net,DIRECT',
     // 下面的可以删除，用于我的个人用途
     'PROCESS-NAME,ddns.exe,DIRECT',
     'DOMAIN-SUFFIX,home.gyrojeff.moe,DIRECT',
@@ -74,6 +74,7 @@
     'DOMAIN-SUFFIX,onenote.net,',
     'DOMAIN-SUFFIX,1drv.com,',
     'DOMAIN-SUFFIX,cdn.v2ex.com,',
+	'DOMAIN-SUFFIX,cdn.jsdelivr.net,',
   ]
   ```
 * 不同方案，对应走梯子的规则组

@@ -28,7 +28,7 @@ module.exports.parse = ({ content, name, url }, { yaml, axios, notify }) => {
     'DOMAIN,clash.razord.top,DIRECT',
     'DOMAIN,yacd.haishan.me,DIRECT',
     'DOMAIN-SUFFIX,msftncsi.com,DIRECT',
-    'DOMAIN-SUFFIX,cdn.jsdelivr.net,DIRECT',
+    // 'DOMAIN-SUFFIX,cdn.jsdelivr.net,DIRECT',
     // custom 可以删除，用于我的个人用途
     'PROCESS-NAME,ddns.exe,DIRECT',
     'DOMAIN-SUFFIX,home.gyrojeff.moe,DIRECT',
@@ -56,6 +56,7 @@ module.exports.parse = ({ content, name, url }, { yaml, axios, notify }) => {
     'DOMAIN-SUFFIX,onenote.net,',
     'DOMAIN-SUFFIX,1drv.com,',
     'DOMAIN-SUFFIX,cdn.v2ex.com,',
+    'DOMAIN-SUFFIX,cdn.jsdelivr.net,',
   ]
   
   // 需要对每个 Plan 配置相应的 GroupName
